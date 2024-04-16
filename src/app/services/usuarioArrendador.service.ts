@@ -38,4 +38,23 @@ export class usuarioArrendadorService {
   getArrendadorExterno(): Promise< usuarioArrendador[] > {
     return axios.get< usuarioArrendador[] >('http://localhost:8080/grupo13/logingFormulario').then(response => response.data);
   }
+
+  async actualizarArrendador(arrendador: usuarioArrendador): Promise<usuarioArrendador> {
+    try {
+      const response = await axios.put<usuarioArrendador>(`${this.apiUrl}/${arrendador.id}`, arrendador);
+      return response.data;
+    } catch (error) {
+      console.error('Error al actualizar arrendador:', error);
+      throw error;
+    }
+  }
+
+  async borrarArrendador(id: number): Promise<void> {
+    try {
+      await axios.delete(`${this.apiUrl}/${id}`);
+    } catch (error) {
+      console.error('Error al borrar arrendador:', error);
+      throw error;
+    }
+  }
 }

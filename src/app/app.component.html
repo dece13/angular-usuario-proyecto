@@ -8,45 +8,73 @@
     {{ arrendador.nombre }} {{ arrendador.apellidos }}
   </li>
 </ul>
-
 <div *ngIf="arrendadorSeleccionado" class="arrendador-info">
-  <h2>Información del Arrendador Seleccionado</h2>
-  <p><strong>Nombre:</strong> {{ arrendadorSeleccionado.nombre }}</p>
-  <p><strong>Apellido:</strong> {{ arrendadorSeleccionado.apellidos }}</p>
-  <p>Edad: {{ arrendadorSeleccionado.edad }}</p>
-  <p>Correo: {{ arrendadorSeleccionado.correo }}</p>
-  <p>Teléfono: {{ arrendadorSeleccionado.telefono }}</p>
-  <p>Tipo de Cuenta: {{ arrendadorSeleccionado.tipoCuenta }}</p>
-  <button (click)="reiniciarSeleccion()">Deseleccionar Arrendador</button>
-</div>
-<!-- Dentro del componente AppComponent -->
-
-<div>
-    <h2>Agregar Arrendador</h2>
-    <form (ngSubmit)="agregarArrendador()">
-      <div>
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" [(ngModel)]="nuevoArrendador.nombre" required>
-      </div>
-      <div>
-        <label for="apellido">Apellido:</label>
-        <input type="text" id="apellido" name="apellido" [(ngModel)]="nuevoArrendador.apellidos" required>
-      </div>
-      <div>
-        <label for="edad">Edad:</label>
-        <input type="number" id="edad" name="edad" [(ngModel)]="nuevoArrendador.edad" required>
-      </div>
-      <div>
-        <label for="correo">Correo:</label>
-        <input type="email" id="correo" name="correo" [(ngModel)]="nuevoArrendador.correo" required>
-      </div>
-      <div>
-        <label for="telefono">Teléfono:</label>
-        <input type="text" id="telefono" name="telefono" [(ngModel)]="nuevoArrendador.telefono" required>
-      </div>
-      <button type="submit">Agregar</button>
-    </form>
+    <h2>Información del Arrendador Seleccionado</h2>
+    <p><strong>Nombre:</strong> {{ arrendadorSeleccionado.nombre }}</p>
+    <p><strong>Apellido:</strong> {{ arrendadorSeleccionado.apellidos }}</p>
+    <p>Edad: {{ arrendadorSeleccionado.edad }}</p>
+    <p>Correo: {{ arrendadorSeleccionado.correo }}</p>
+    <p>Teléfono: {{ arrendadorSeleccionado.telefono }}</p>
+    <p>Tipo de Cuenta: {{ arrendadorSeleccionado.tipoCuenta }}</p>
+    <button (click)="borrarArrendador(arrendadorSeleccionado.id)">Borrar Arrendador</button>
+    <button (click)="reiniciarSeleccion()">Deseleccionar Arrendador</button>
   </div>
   
-  
+  <div *ngIf="arrendadorSeleccionado" class="actualizar-arrendador">
+    <h2>Actualizar Arrendador</h2>
+    <form (ngSubmit)="actualizarArrendador()">
+      <div>
+        <label for="nombreActualizado">Nombre:</label>
+        <input type="text" id="nombreActualizado" name="nombreActualizado" [(ngModel)]="arrendadorSeleccionado.nombre" required>
+      </div>
+      <div>
+        <label for="apellidoActualizado">Apellido:</label>
+        <input type="text" id="apellidoActualizado" name="apellidoActualizado" [(ngModel)]="arrendadorSeleccionado.apellidos" required>
+      </div>
+      <div>
+        <label for="edadActualizada">Edad:</label>
+        <input type="number" id="edadActualizada" name="edadActualizada" [(ngModel)]="arrendadorSeleccionado.edad" required>
+      </div>
+      <div>
+        <label for="correoActualizado">Correo:</label>
+        <input type="email" id="correoActualizado" name="correoActualizado" [(ngModel)]="arrendadorSeleccionado.correo" required>
+      </div>
+      <div>
+        <label for="telefonoActualizado">Teléfono:</label>
+        <input type="text" id="telefonoActualizado" name="telefonoActualizado" [(ngModel)]="arrendadorSeleccionado.telefono" required>
+      </div>
+      <button type="submit">Actualizar</button>
+    </form>
+  </div>
+
+
+
+<div>
+  <h2>Agregar Arrendador</h2>
+  <form (ngSubmit)="agregarArrendador()">
+    <div>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" [(ngModel)]="nuevoArrendador.nombre" required>
+    </div>
+    <div>
+      <label for="apellido">Apellido:</label>
+      <input type="text" id="apellido" name="apellido" [(ngModel)]="nuevoArrendador.apellidos" required>
+    </div>
+    <div>
+      <label for="edad">Edad:</label>
+      <input type="number" id="edad" name="edad" [(ngModel)]="nuevoArrendador.edad" required>
+    </div>
+    <div>
+      <label for="correo">Correo:</label>
+      <input type="email" id="correo" name="correo" [(ngModel)]="nuevoArrendador.correo" required>
+    </div>
+    <div>
+      <label for="telefono">Teléfono:</label>
+      <input type="text" id="telefono" name="telefono" [(ngModel)]="nuevoArrendador.telefono" required>
+    </div>
+    <button type="submit">Agregar</button>
+  </form>
+</div>
+
+
 <router-outlet></router-outlet>
