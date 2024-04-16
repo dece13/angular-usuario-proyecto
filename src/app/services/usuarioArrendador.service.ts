@@ -1,16 +1,30 @@
 import { Injectable } from '@angular/core';
 import { usuarioArrendador } from '../models/usuarioArredendador';
+
 import { Observable, of } from 'rxjs';
 
 import axios from 'axios';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class usuarioArrendadorService {
 
+  private apiUrl = 'http://localhost:8080/grupo13/logingFormulario'; // URL del backend
+
   constructor() { }
 
+  // Método para enviar los datos del arrendador al backend
+  async agregarArrendador(arrendador: usuarioArrendador): Promise<usuarioArrendador> {
+    try {
+      const response = await axios.post<usuarioArrendador>('http://localhost:8080/grupo13/logingFormulario', arrendador);
+      return response.data;
+    } catch (error) {
+      console.error('Error al agregar arrendador:', error);
+      throw error;
+    }
+  }
 
   getArrendadorInterno(): Observable< usuarioArrendador[] > {
     return of([

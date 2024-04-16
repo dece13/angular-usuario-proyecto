@@ -1,0 +1,47 @@
+/* Estilos adicionales para la lista de arrendadores */
+.arrendadores-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .arrendadores-list li {
+    margin-bottom: 10px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .arrendadores-list li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Estilos adicionales para la información del arrendador seleccionado */
+  .arrendador-info {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .arrendador-info p {
+    margin-bottom: 10px;
+  }
+  
+  .arrendador-info button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .arrendador-info button:hover {
+    background-color: #0056b3;
+  }
+  
+  
