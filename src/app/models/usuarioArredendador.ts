@@ -8,5 +8,6 @@ export class usuarioArrendador{
         public correo:string,
         public telefono:number,
         public tipoCuenta:number,
+            
     ){}
 }
