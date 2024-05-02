@@ -1,4 +1,4 @@
-export class usuarioArrendador{
+export class UsuarioArrendatario{
 
     constructor(
         public id:number,
