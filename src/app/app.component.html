@@ -9,6 +9,7 @@
         <li><a href="#">Contacto</a></li>
         <li><a href="arrendadorUsuario/data">Ver Arrendadores</a></li>
         <li><a href="/propiedades-arrendatario">Ver propiedades del arrendatario</a></li>
+        <li> <a href="arrendatarioUsuario/data">Ver Arrendatarios</a></li>
       </ul>
     </nav>
   </header>
@@ -18,9 +19,14 @@
       
       <router-outlet></router-outlet>
      
-      
+      <!-- Componente Home -->
+  <div *ngIf="isHome()">
+    <app-home></app-home>
+  </div>
+
   </main>
 
+  
   
   
 

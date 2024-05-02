@@ -1,0 +1,41 @@
+
+ /* Estilos para el formulario de agregar y actualizar */
+ form {
+    margin: auto;
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  form input[type="text"],
+  form input[type="number"],
+  form input[type="email"] {
+    width: calc(100% - 24px);
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  form button[type="submit"] {
+    width: calc(100% - 24px);
+    padding: 14px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  form button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  

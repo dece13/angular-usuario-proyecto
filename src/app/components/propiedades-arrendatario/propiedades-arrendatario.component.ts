@@ -16,7 +16,7 @@ import {PropiedadesArrendatarioService} from '../../services/PropiedadesArrendat
 export class PropiedadesArrendatarioComponent {
   title = 'Propiedades Arrendatario';
 
-  nuevaPropiedad: PropiedadesArrendatario = new PropiedadesArrendatario(0, '', '', 0,''); // Nuevo arrendador a agregar
+  nuevaPropiedad: PropiedadesArrendatario = new PropiedadesArrendatario(0, '', '', 0,'',false,''); // Nuevo arrendador a agregar
   datosModelosService: PropiedadesArrendatario[] = [];
   propiedadSeleccionada: PropiedadesArrendatario | null = null;
 
@@ -49,7 +49,7 @@ export class PropiedadesArrendatarioComponent {
       .then(nuevaPropiedad => {
         console.log('Arrendador agregado:', nuevaPropiedad);
         // Aquí puedes realizar cualquier lógica adicional después de agregar el arrendador, como limpiar el formulario
-        this.nuevaPropiedad = new PropiedadesArrendatario(0, '', '', 0,'');
+        this.nuevaPropiedad = new PropiedadesArrendatario(0, '', '', 0,'',false,'');
         this.cargarPropiedadesArrendador();
       })
       .catch(error => {

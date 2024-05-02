@@ -6,5 +6,7 @@ export class PropiedadesArrendatario{
         public municipio:string,  
         public cantidadPerosnas:number,
         public departamento:string,
+        public reservada:boolean,
+        public reservadaPor:string
     ){}
 }

@@ -1,1 +1,48 @@
-<p>usuario-arrendatario works!</p>
+<br>
+<h1>Arrendatarios:</h1>
+<ul class="arrendadores-list">
+  <li *ngFor="let arrendador of datosModelosService" (click)="seleccionarArrendador(arrendador)">
+    {{ arrendador.nombre }} {{ arrendador.apellidos }}
+  </li>
+</ul>
+<div *ngIf="arrendatarioSeleccionado" class="arrendador-info">
+    <h2>Información del Arrendador Seleccionado</h2>
+    <p><strong>Nombre:</strong> {{ arrendatarioSeleccionado.nombre }}</p>
+    <p><strong>Apellido:</strong> {{ arrendatarioSeleccionado.apellidos }}</p>
+    <p>Edad: {{ arrendatarioSeleccionado.edad }}</p>
+    <p>Correo: {{ arrendatarioSeleccionado.correo }}</p>
+    <p>Teléfono: {{ arrendatarioSeleccionado.telefono }}</p>
+    <p>Tipo de Cuenta: {{ arrendatarioSeleccionado.tipoCuenta }}</p>
+    <button (click)="borrarArrendatario(arrendatarioSeleccionado.id)">Borrar Arrendador</button>
+    <button (click)="reiniciarSeleccion()">Deseleccionar Arrendador</button>
+  </div>
+  
+  <div *ngIf="arrendatarioSeleccionado" class="actualizar-arrendador">
+    <h2>Actualizar Arrendador</h2>
+    <form (ngSubmit)="actualizarArrendador()">
+      <div>
+        <label for="nombreActualizado">Nombre:</label>
+        <input type="text" id="nombreActualizado" name="nombreActualizado" [(ngModel)]="arrendatarioSeleccionado.nombre" required>
+      </div>
+      <div>
+        <label for="apellidoActualizado">Apellido:</label>
+        <input type="text" id="apellidoActualizado" name="apellidoActualizado" [(ngModel)]="arrendatarioSeleccionado.apellidos" required>
+      </div>
+      <div>
+        <label for="edadActualizada">Edad:</label>
+        <input type="number" id="edadActualizada" name="edadActualizada" [(ngModel)]="arrendatarioSeleccionado.edad" required>
+      </div>
+      <div>
+        <label for="correoActualizado">Correo:</label>
+        <input type="email" id="correoActualizado" name="correoActualizado" [(ngModel)]="arrendatarioSeleccionado.correo" required>
+      </div>
+      <div>
+        <label for="telefonoActualizado">Teléfono:</label>
+        <input type="text" id="telefonoActualizado" name="telefonoActualizado" [(ngModel)]="arrendatarioSeleccionado.telefono" required>
+      </div>
+      <button type="submit">Actualizar</button>
+    </form>
+  </div>
+
+
+<router-outlet></router-outlet>

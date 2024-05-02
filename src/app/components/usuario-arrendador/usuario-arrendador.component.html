@@ -46,30 +46,5 @@
 
 
 
-<div>
-  <h2>Agregar Arrendador</h2>
-  <form (ngSubmit)="agregarArrendador()">
-    <div>
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" [(ngModel)]="nuevoArrendador.nombre" required>
-    </div>
-    <div>
-      <label for="apellido">Apellido:</label>
-      <input type="text" id="apellido" name="apellido" [(ngModel)]="nuevoArrendador.apellidos" required>
-    </div>
-    <div>
-      <label for="edad">Edad:</label>
-      <input type="number" id="edad" name="edad" [(ngModel)]="nuevoArrendador.edad" required>
-    </div>
-    <div>
-      <label for="correo">Correo:</label>
-      <input type="email" id="correo" name="correo" [(ngModel)]="nuevoArrendador.correo" required>
-    </div>
-    <div>
-      <label for="telefono">Teléfono:</label>
-      <input type="text" id="telefono" name="telefono" [(ngModel)]="nuevoArrendador.telefono" required>
-    </div>
-    <button type="submit">Agregar</button>
-  </form>
-</div>
+
 <router-outlet></router-outlet>
