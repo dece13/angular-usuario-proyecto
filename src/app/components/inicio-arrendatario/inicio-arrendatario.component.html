@@ -1,0 +1,34 @@
+<!-- inicio-arrendatario.component.html -->
+
+<div class="container">
+    <div class="sidebar">
+      <div class="user-profile">
+        <!-- Mostrar la foto del usuario cargado -->
+        <img src="user-avatar.jpg" alt="User Avatar">
+        <h4>{{ usuario?.nombre || 'Nombre de usuario' }}</h4>
+      </div>
+      <div class="menu">
+        <!-- Agregar enlaces o elementos del menú -->
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Perfil</a></li>
+          <li><a href="#">Configuración</a></li>
+          <li><a href="#">Cerrar sesión</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-content">
+      <!-- Mostrar la información del usuario cargado -->
+      <div ngIf="usuario" class="arrendador-info">
+        <h2>Información del Arrendador</h2>
+        <p><strong>Nombre:</strong> {{ usuario?.nombre }}</p>
+        <p><strong>Apellido:</strong> {{ usuario?.apellidos }}</p>
+        <p><strong>Edad:</strong> {{ usuario?.edad }}</p>
+        <p><strong>Correo:</strong> {{ usuario?.correo }}</p>
+        <p><strong>Teléfono:</strong> {{ usuario?.telefono }}</p>
+        <p><strong>Tipo de Cuenta:</strong> {{ usuario?.tipoCuenta }}</p>
+        <!-- Puedes agregar botones para borrar o actualizar el usuario aquí -->
+      </div>
+    </div>
+  </div>
+  

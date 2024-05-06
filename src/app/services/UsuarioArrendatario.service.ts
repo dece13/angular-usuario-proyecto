@@ -14,6 +14,16 @@ export class UsuarioArrendatarioService {
 
   constructor() { }
 
+  async obtenerUsuarioPorId(id: number): Promise<UsuarioArrendatario> {
+    try {
+      const response = await axios.get<UsuarioArrendatario>(`${this.apiUrl}/${id}`);
+      return response.data;
+    } catch (error) {
+      console.error('Error al obtener usuario por ID:', error);
+      throw error;
+    }
+  }
+
   // Método para enviar los datos del arrendador al backend
   async agregarArrendatario(arrendador: UsuarioArrendatario): Promise<UsuarioArrendatario> {
     try {
