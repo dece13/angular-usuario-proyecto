@@ -5,7 +5,7 @@
     <p><strong>ID:</strong> {{ propiedad.id }}</p>
     <p><strong>Nombre de la propiedad:</strong> {{ propiedad.nombre }}</p>
     <p><strong>Ubicación:</strong> {{ propiedad.municipio }}</p>
-    <p><strong>Tamaño:</strong> {{ propiedad.cantidadPerosnas }}</p>
+    <p><strong>Cantidad Personas:</strong> {{ propiedad.cantidadPerosnas }}</p>
     <p><strong>Departamento:</strong> {{ propiedad.departamento }}</p>
     <button (click)="actualizarPropiedad()">Editar</button>
     <button (click)="borrarPropiedad(propiedad.id)">Borrar</button>
@@ -17,7 +17,7 @@
   <p><strong>ID:</strong> {{ propiedadSeleccionada.id }}</p>
   <p><strong>Nombre de la propiedad:</strong> {{ propiedadSeleccionada.nombre }}</p>
   <p><strong>Ubicación:</strong> {{ propiedadSeleccionada.municipio }}</p>
-  <p><strong>Tamaño:</strong> {{ propiedadSeleccionada.cantidadPerosnas }}</p>
+  <p><strong>Cantidad Personas:</strong> {{ propiedadSeleccionada.cantidadPerosnas }}</p>
   <p><strong>Departamento:</strong> {{ propiedadSeleccionada.departamento }}</p>
   <button (click)="actualizarPropiedad()">Editar</button>
   <button (click)="borrarPropiedad(propiedadSeleccionada.id)">Borrar</button>
@@ -58,7 +58,7 @@
       <input type="text" id="ubicacion" name="ubicacion" [(ngModel)]="nuevaPropiedad.municipio" required>
     </div>
     <div>
-      <label for="tamaño">Tamaño:</label>
+      <label for="tamaño">Cantidad Personas:</label>
       <input type="text" id="tamaño" name="tamaño" [(ngModel)]="nuevaPropiedad.cantidadPerosnas" required>
     </div>
     <div>

@@ -16,7 +16,7 @@ import { usuarioArrendadorService } from '../../services/usuarioArrendador.servi
 })
 export class UsuarioArrendadorComponent {
   
-  nuevoArrendador: usuarioArrendador = new usuarioArrendador(0, '', '', 0, '', 0, 0); // Nuevo arrendador a agregar
+  nuevoArrendador: usuarioArrendador = new usuarioArrendador(0, '', '', 0, '', 0,'', 0); // Nuevo arrendador a agregar
   datosModelosService: usuarioArrendador[] = [];
   arrendadorSeleccionado: usuarioArrendador | null = null;
 
@@ -48,7 +48,7 @@ export class UsuarioArrendadorComponent {
       .then(nuevoArrendador => {
         console.log('Arrendador agregado:', nuevoArrendador);
         // Aquí puedes realizar cualquier lógica adicional después de agregar el arrendador, como limpiar el formulario
-        this.nuevoArrendador = new usuarioArrendador(0, '', '', 0, '', 0, 1);
+        this.nuevoArrendador = new usuarioArrendador(0, '', '', 0, '', 0,'', 1);
         this.cargarUsuarioArrendador();
       })
       .catch(error => {

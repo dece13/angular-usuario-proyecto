@@ -7,6 +7,7 @@ export class usuarioArrendador{
         public edad:number,
         public correo:string,
         public telefono:number,
+        public contrasena:string,
         public tipoCuenta:number,
             
     ){}
