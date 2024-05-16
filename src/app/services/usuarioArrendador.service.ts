@@ -14,7 +14,15 @@ export class usuarioArrendadorService {
   private apiUrl = 'http://localhost:8080/grupo13/logingFormulario'; // URL del backend
 
   constructor() { }
-
+  async obtenerUsuarioPorId(id: number): Promise<usuarioArrendador> {
+    try {
+      const response = await axios.get<usuarioArrendador>(`${this.apiUrl}/${id}`);
+      return response.data;
+    } catch (error) {
+      console.error('Error al obtener usuario por ID:', error);
+      throw error;
+    }
+  }
   // Método para enviar los datos del arrendador al backend
   agregarArrendador(arrendador: usuarioArrendador): Promise<usuarioArrendador> {
     // Obtener el token CSRF del almacenamiento local o de otra fuente

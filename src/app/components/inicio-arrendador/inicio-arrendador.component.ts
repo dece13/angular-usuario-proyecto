@@ -1,22 +1,21 @@
 import { Component } from '@angular/core';
-import { UsuarioArrendatario } from '../../models/UsuarioArrendatario';
-import { UsuarioArrendatarioService } from '../../services/UsuarioArrendatario.service';
+import { usuarioArrendador } from '../../models/usuarioArredendador';
+import { usuarioArrendadorService } from '../../services/usuarioArrendador.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms'; // Importa FormsModule aquí
 import { AuthService } from '../../services/auth.service';
-
 @Component({
-  selector: 'app-inicio-arrendatario',
+  selector: 'app-inicio-arrendador',
   standalone: true,
-  imports: [FormsModule],
-  templateUrl: './inicio-arrendatario.component.html',
-  styleUrl: './inicio-arrendatario.component.css'
+  imports: [FormsModule ],
+  templateUrl: './inicio-arrendador.component.html',
+  styleUrl: './inicio-arrendador.component.css'
 })
-export class InicioArrendatarioComponent {
+export class InicioArrendadorComponent {
   usuarioId: number | null = null;
-  usuario: UsuarioArrendatario | null = null;
+  usuario: usuarioArrendador | null = null;
 
-  constructor(private route: ActivatedRoute, private usuarioService: UsuarioArrendatarioService,private authService: AuthService, private router: Router) {}
+  constructor(private route: ActivatedRoute, private usuarioService: usuarioArrendadorService,private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {

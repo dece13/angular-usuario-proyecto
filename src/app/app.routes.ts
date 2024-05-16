@@ -6,6 +6,8 @@ import { SingUpArrendatarioComponent } from './components/sing-up-arrendatario/s
 import { SingUpArrendadorComponent } from './components/sing-up-arrendador/sing-up-arrendador.component';
 import { SingInArrendatarioComponent } from './components/sing-in-arrendatario/sing-in-arrendatario.component';
 import { InicioArrendatarioComponent } from './components/inicio-arrendatario/inicio-arrendatario.component';
+import { SinginArrendadorComponent } from './components/singin-arrendador/singin-arrendador.component';
+import { InicioArrendadorComponent } from './components/inicio-arrendador/inicio-arrendador.component';
 
 export const routes: Routes = [
     {path:'arrendadorUsuario/data',component: UsuarioArrendadorComponent},
@@ -14,5 +16,8 @@ export const routes: Routes = [
     {path: 'UsuarioArrendatario/singUp', component: SingUpArrendatarioComponent},
     {path: 'UsuarioArrendador/singUp', component: SingUpArrendadorComponent},
     {path: 'UsuarioArrendatario/singIn', component: SingInArrendatarioComponent},
-    {path: 'UsuarioArrendatario/Inicio/:id' , component: InicioArrendatarioComponent}
+    {path: 'UsuarioArrendador/singIn', component: SinginArrendadorComponent},
+    {path: 'UsuarioArrendatario/Inicio/:id' , component: InicioArrendatarioComponent},
+    {path: 'UsuarioArrendador/Inicio/:id' , component: InicioArrendadorComponent}
+
 ];
