@@ -8,6 +8,7 @@ import { SingInArrendatarioComponent } from './components/sing-in-arrendatario/s
 import { InicioArrendatarioComponent } from './components/inicio-arrendatario/inicio-arrendatario.component';
 import { SinginArrendadorComponent } from './components/singin-arrendador/singin-arrendador.component';
 import { InicioArrendadorComponent } from './components/inicio-arrendador/inicio-arrendador.component';
+import { ReservarComponent } from './components/reservar/reservar.component';
 
 export const routes: Routes = [
     {path:'arrendadorUsuario/data',component: UsuarioArrendadorComponent},
@@ -18,6 +19,7 @@ export const routes: Routes = [
     {path: 'UsuarioArrendatario/singIn', component: SingInArrendatarioComponent},
     {path: 'UsuarioArrendador/singIn', component: SinginArrendadorComponent},
     {path: 'UsuarioArrendatario/Inicio/:id' , component: InicioArrendatarioComponent},
-    {path: 'UsuarioArrendador/Inicio/:id' , component: InicioArrendadorComponent}
+    {path: 'UsuarioArrendador/Inicio/:id' , component: InicioArrendadorComponent},
+    {path: 'propiedades/seleccion' , component: ReservarComponent}
 
 ];

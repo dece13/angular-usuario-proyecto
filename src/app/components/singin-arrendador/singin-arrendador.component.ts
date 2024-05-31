@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
+import { AuthArrendadorService } from '../../services/authArrendador.service';
 import { FormsModule } from '@angular/forms'; // Importa FormsModule aquí
 
 @Component({
@@ -13,10 +13,10 @@ export class SinginArrendadorComponent {
   email: string = '';
   password: string = '';
 
-  constructor(private authService: AuthService) { }
+  constructor(private authArrendadorService: AuthArrendadorService) { }
 
   signin() {
-    if (this.authService.login(this.email, this.password)) {
+    if (this.authArrendadorService.login(this.email, this.password)) {
       // Si el inicio de sesión es exitoso, el AuthService redireccionará al usuario automáticamente
     } else {
       // Si el inicio de sesión falla, puedes manejarlo aquí (por ejemplo, mostrar un mensaje de error)

@@ -1,0 +1,44 @@
+<h1>Propiedades del Arrendatario</h1>
+
+<ul class="propiedades-list">
+  <li *ngFor="let propiedad of datosModelosService" (click)="seleccionarPropiedad(propiedad)">
+    <p><strong>ID:</strong> {{ propiedad.id }}</p>
+    <p><strong>Nombre de la propiedad:</strong> {{ propiedad.nombre }}</p>
+    <p><strong>Ubicación:</strong> {{ propiedad.municipio }}</p>
+    <p><strong>Cantidad Personas:</strong> {{ propiedad.cantidadPerosnas }}</p>
+    <p><strong>Departamento:</strong> {{ propiedad.departamento }}</p>
+    <button (click)="actualizarPropiedad()">Editar</button>
+    
+  </li>
+</ul>
+
+<div *ngIf="propiedadSeleccionada" class="propiedad-info">
+  <h2>Información de la Propiedad Seleccionada</h2>
+  <p><strong>ID:</strong> {{ propiedadSeleccionada.id }}</p>
+  <p><strong>Nombre de la propiedad:</strong> {{ propiedadSeleccionada.nombre }}</p>
+  <p><strong>Ubicación:</strong> {{ propiedadSeleccionada.municipio }}</p>
+  <p><strong>Cantidad Personas:</strong> {{ propiedadSeleccionada.cantidadPerosnas }}</p>
+  <p><strong>Departamento:</strong> {{ propiedadSeleccionada.departamento }}</p>
+  <p><strong>Reservada:</strong> {{ propiedadSeleccionada.reservada }}</p>
+  <p><strong>Reservada por:</strong> {{ propiedadSeleccionada.reservadaPor }}</p>
+  <button (click)="actualizarPropiedad()">Editar</button>
+  
+</div>
+
+<div *ngIf="propiedadSeleccionada" class="actualizar-propiedad">
+    <h2>Actualizar Propiedad</h2>
+    <form (ngSubmit)="actualizarPropiedad()">
+      <div>
+        <label for="reservada">Reservada:</label>
+        <input type="checkbox" id="reservada" name="reservada" [(ngModel)]="propiedadSeleccionada.reservada" [disabled]="propiedadSeleccionada.reservada">
+      </div>
+      <div>
+        <label for="reservadaPor">Reservada por:</label>
+        <input type="text" id="reservadaPor" name="reservadaPor" [(ngModel)]="propiedadSeleccionada.reservadaPor" disabled>
+      </div>
+      <button type="submit">Actualizar</button>
+    </form>
+  </div>
+  
+
+

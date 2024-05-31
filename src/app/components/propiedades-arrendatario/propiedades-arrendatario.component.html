@@ -19,6 +19,8 @@
   <p><strong>Ubicación:</strong> {{ propiedadSeleccionada.municipio }}</p>
   <p><strong>Cantidad Personas:</strong> {{ propiedadSeleccionada.cantidadPerosnas }}</p>
   <p><strong>Departamento:</strong> {{ propiedadSeleccionada.departamento }}</p>
+  <p><strong>Reservada:</strong> {{ propiedadSeleccionada.reservada }}</p>
+  <p><strong>Reservada por:</strong> {{ propiedadSeleccionada.reservadaPor }}</p>
   <button (click)="actualizarPropiedad()">Editar</button>
   <button (click)="borrarPropiedad(propiedadSeleccionada.id)">Borrar</button>
 </div>

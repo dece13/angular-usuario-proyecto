@@ -26,9 +26,30 @@ export class PropiedadesArrendatarioService {
   }
 
   getPropiedadExterno(): Promise<PropiedadesArrendatario[]> {
-    // Datos quemados
-    return axios.get< PropiedadesArrendatario[] >('http://localhost:8080/grupo13/logingFormularioPropiedades').then(response => response.data);
+    
+    const iduser = localStorage.getItem('userId');
+    if (!iduser) {
+        throw new Error('ID de usuario no encontrado en localStorage');
+    }
+    
+    const url = `http://localhost:8080/grupo13/logingFormularioPropiedades/arrendador/${iduser}`;
+    
+    return axios.get<PropiedadesArrendatario[]>(url)
+        .then(response => response.data);
+}
+
+getPropiedadExternoArrendador(): Promise<PropiedadesArrendatario[]> {
+    
+  const iduser = localStorage.getItem('userId');
+  if (!iduser) {
+      throw new Error('ID de usuario no encontrado en localStorage');
   }
+  
+  const url = `http://localhost:8080/grupo13/logingFormularioPropiedades`;
+  
+  return axios.get<PropiedadesArrendatario[]>(url)
+      .then(response => response.data);
+}
 
   async actualizarPropiedad(propiedad: PropiedadesArrendatario): Promise<PropiedadesArrendatario> {
     try {

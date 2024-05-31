@@ -16,7 +16,7 @@ import {PropiedadesArrendatarioService} from '../../services/PropiedadesArrendat
 export class PropiedadesArrendatarioComponent {
   title = 'Propiedades Arrendatario';
 
-  nuevaPropiedad: PropiedadesArrendatario = new PropiedadesArrendatario(0, '', '', 0,'',false,''); // Nuevo arrendador a agregar
+  nuevaPropiedad: PropiedadesArrendatario = new PropiedadesArrendatario(0, 0,'', '', 0,'',false,''); // Nuevo arrendador a agregar
   datosModelosService: PropiedadesArrendatario[] = [];
   propiedadSeleccionada: PropiedadesArrendatario | null = null;
 
@@ -45,17 +45,30 @@ export class PropiedadesArrendatarioComponent {
 
   // Método para agregar un nuevo arrendador
   agregarPropiedad(): void {
-    this.propiedadesArrendatarioService.agregarPropiedad(this.nuevaPropiedad)
-      .then(nuevaPropiedad => {
-        console.log('Arrendador agregado:', nuevaPropiedad);
-        // Aquí puedes realizar cualquier lógica adicional después de agregar el arrendador, como limpiar el formulario
-        this.nuevaPropiedad = new PropiedadesArrendatario(0, '', '', 0,'',false,'');
-        this.cargarPropiedadesArrendador();
-      })
-      .catch(error => {
-        console.error('Error al agregar arrendador:', error);
-        // Maneja el error según sea necesario
-      });
+    // Obtener el valor del localStorage
+    const idString = localStorage.getItem('userId');
+    console.log(idString);
+
+    // Verificar si el valor es null y manejarlo adecuadamente
+    if (idString !== null) {
+      // Convertir el valor a un entero
+      const iduser = parseInt(idString, 10);
+      this.nuevaPropiedad.idArrendador = iduser;
+      
+      this.propiedadesArrendatarioService.agregarPropiedad(this.nuevaPropiedad)
+        .then(nuevaPropiedad => {
+          console.log('Arrendador agregado:', nuevaPropiedad);
+          // Aquí puedes realizar cualquier lógica adicional después de agregar el arrendador, como limpiar el formulario
+          this.nuevaPropiedad = new PropiedadesArrendatario(0, iduser, '', '', 0, '', false, '');
+          this.cargarPropiedadesArrendador();
+        })
+        .catch(error => {
+          console.error('Error al agregar arrendador:', error);
+          // Maneja el error según sea necesario
+        });
+    } else {
+      console.error('ID de usuario no encontrado en localStorage');
+    }
   }
 
   actualizarPropiedad(): void {
